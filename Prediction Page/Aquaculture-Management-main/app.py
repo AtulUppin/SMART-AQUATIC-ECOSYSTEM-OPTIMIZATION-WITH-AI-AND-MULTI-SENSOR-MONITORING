@@ -7,7 +7,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the model
-with open('C:/Users/ATUL/Downloads/Aquaculture-Management-main (1)/Aquaculture-Management-main/models/clf.pkl', 'rb') as f:
+with open('C:/Users/ATUL/OneDrive/Desktop/Major Project/Prediction Page/Aquaculture-Management-main/models/clf.pkl', 'rb') as f:
     model = pickle.load(f)
 
 @app.route('/', methods=['GET'])

@@ -2,49 +2,73 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fish Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
-<body>
-    <div class="container">
-        <h1>Fish Prediction</h1>
-        <form action="/predict" method="post" class="form">
-            <div class="input-group">
-                <label for="Ammonia">Ammonia:</label>
-                <input type="number" id="Ammonia" name="Ammonia" required>
-            </div>
-            <div class="input-group">
-                <label for="Nitrite">Nitrite:</label>
-                <input type="number" id="Nitrite" name="Nitrite" required>
-            </div>
-            <div class="input-group">
-                <label for="Nitrate">Nitrate:</label>
-                <input type="number" id="Nitrate" name="Nitrate" required>
-            </div>
-            <div class="input-group">
-                <label for="temperature">Temperature:</label>
-                <input type="number" id="temperature" name="temperature" required>
-            </div>
-            <div class="input-group">
-                <label for="humidity">Humidity:</label>
-                <input type="number" id="humidity" name="humidity" required>
-            </div>
-            <div class="input-group">
-                <label for="ph">PH:</label>
-                <input type="number" id="ph" name="ph" required>
-            </div>
-            <div class="input-group">
-                <label for="rainfall">Rainfall:</label>
-                <input type="number" id="rainfall" name="rainfall" required>
-            </div>
-            <input type="submit" value="Predict" class="btn">
-        </form>
-        {% if prediction_text %}
+
+<body
+    style="font-family: Arial, sans-serif; height: 98vh; background-image: linear-gradient(#bae6fd, #818cf8); background-color: #0ea5e9 ">
+    <div class="container" style="
+        height: 100%; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+    ">
+        <div class="" style="background-color: white; width: 30%; padding: 50px; border-radius: 0.25rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; ">
+            <h1>Fish Prediction</h1>
+            <form action="/predict" method="post" class="form" style="display: grid;
+        padding: 0.5rem; 
+        gap: 1.25rem; 
+        width: 80%;
+
+        ">
+                <div class="input-group" style="display: flex; justify-content: space-between; align-items: center; ">
+                    <label for="Ammonia">Ammonia</label>
+                    <input type="number" id="Ammonia" name="Ammonia" required style="padding: 5px; height: 20px;">
+                </div>
+                <div class="input-group" style="display: flex; justify-content: space-between; align-items: center; ">
+                    <label for="Nitrite">Nitrite</label>
+                    <input type="number" id="Nitrite" name="Nitrite" required style="padding: 5px; height: 20px;">
+                </div>
+                <div class="input-group" style="display: flex; justify-content: space-between; align-items: center; ">
+                    <label for="Nitrate">Nitrate</label>
+                    <input type="number" id="Nitrate" name="Nitrate" required style="padding: 5px; height: 20px;">
+                </div>
+                <div class="input-group" style="display: flex; justify-content: space-between; align-items: center; ">
+                    <label for="temperature">Temperature</label>
+                    <input type="number" id="temperature" name="temperature" required style="padding: 5px; height: 20px;">
+                </div>
+                <div class="input-group" style="display: flex; justify-content: space-between; align-items: center; ">
+                    <label for="humidity">Humidity</label>
+                    <input type="number" id="humidity" name="humidity" required style="padding: 5px; height: 20px;">
+                </div>
+                <div class="input-group" style="display: flex; justify-content: space-between; align-items: center; ">
+                    <label for="ph">PH</label>
+                    <input type="number" id="ph" name="ph" required style="padding: 5px; height: 20px;">
+                </div>
+                <div class="input-group" style="display: flex; justify-content: space-between; align-items: center; ">
+                    <label for="rainfall">Rainfall</label>
+                    <input type="number" id="rainfall" name="rainfall" required style="padding: 5px; height: 20px;">
+                </div>
+                <input type="submit" value="Predict" class="btn" style="padding: 5px; height: 40px; background-color: #0284c7; color: #ffffff; font-size: 1.125rem; border-radius: 0.25rem; border-width: 0; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); cursor: pointer; 
+                line-height: 1.75rem; ">
+            </form>
+            {% if prediction_text %}
             <h2>{{ prediction_text }}</h2>
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
 </body>
+
 </html>
