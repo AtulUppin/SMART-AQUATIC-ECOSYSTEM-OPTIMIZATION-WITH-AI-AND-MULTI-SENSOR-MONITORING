@@ -1,0 +1,50 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fish Prediction</h1>
+        <form action="/predict" method="post" class="form">
+            <div class="input-group">
+                <label for="Ammonia">Ammonia:</label>
+                <input type="number" id="Ammonia" name="Ammonia" required>
+            </div>
+            <div class="input-group">
+                <label for="Nitrite">Nitrite:</label>
+                <input type="number" id="Nitrite" name="Nitrite" required>
+            </div>
+            <div class="input-group">
+                <label for="Nitrate">Nitrate:</label>
+                <input type="number" id="Nitrate" name="Nitrate" required>
+            </div>
+            <div class="input-group">
+                <label for="temperature">Temperature:</label>
+                <input type="number" id="temperature" name="temperature" required>
+            </div>
+            <div class="input-group">
+                <label for="humidity">Humidity:</label>
+                <input type="number" id="humidity" name="humidity" required>
+            </div>
+            <div class="input-group">
+                <label for="ph">PH:</label>
+                <input type="number" id="ph" name="ph" required>
+            </div>
+            <div class="input-group">
+                <label for="rainfall">Rainfall:</label>
+                <input type="number" id="rainfall" name="rainfall" required>
+            </div>
+            <input type="submit" value="Predict" class="btn">
+        </form>
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
